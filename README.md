@@ -11,7 +11,7 @@ $ cd tracku
 $ python3 -m pip install -r requirements.txt
 ```
 
-##Finding Usernames
+## Finding Usernames
 
 To search for only one user:
 ```
@@ -26,5 +26,6 @@ python3 tracku user1 user2 user3
 Accounts found will be stored in an individual text file with the corresponding username (e.g ```user123.txt```).
 
 
+## Thanks to 
 
-Thanks to [Sherlock] : https://github.com/sherlock-project/sherlock
+[Sherlock] : https://github.com/sherlock-project/sherlock

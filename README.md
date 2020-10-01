@@ -28,4 +28,4 @@ Accounts found will be stored in an individual text file with the corresponding 
 
 ## Thanks to 
 
-[Sherlock] : https://github.com/sherlock-project/sherlock
+[Sherlock](https://github.com/sherlock-project/sherlock)

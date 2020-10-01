@@ -1,3 +1,6 @@
+Searches username using CLI
+
+
 ## Installation
 
 ```console

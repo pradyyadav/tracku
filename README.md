@@ -1,4 +1,4 @@
-Searches username using CLI
+# Tracku : Search username in CLI
 
 
 ## Installation

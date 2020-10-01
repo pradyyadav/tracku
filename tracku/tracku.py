@@ -18,7 +18,6 @@ from time import monotonic
 import requests
 
 from requests_futures.sessions import FuturesSession
-from torrequest import TorRequest
 from result import QueryStatus
 from result import QueryResult
 from notify import QueryNotifyPrint
@@ -262,15 +261,10 @@ def tracku(username, site_data, query_notify,proxy=None, timeout=None):
             # Store future in data for access later
             net_info["request_future"] = future
 
-            # Reset identify for tor (if needed)
-            if unique_tor:
-                underlying_request.reset_identity()
-
         # Add this site's results into final dictionary with all of the other results.
         results_total[social_network] = results_site
-
+        
     # Open the file containing account links
-    # Core logic: If tor requests, make them here. If multi-threaded requests, wait for responses
     for social_network, net_info in site_data.items():
 
         # Retrieve results again
@@ -282,7 +276,6 @@ def tracku(username, site_data, query_notify,proxy=None, timeout=None):
         if status is not None:
             # We have already determined the user doesn't exist here
             continue
-
         # Get the expected error type
         error_type = net_info["errorType"]
 
@@ -500,19 +493,10 @@ def main():
     except Exception as error:
         print(f"A problem occured while checking for an update: {error}")
 
-
-    # Argument check
-    # TODO regex check on args.proxy
-    if args.tor and (args.proxy is not None):
-        raise Exception("Tor and Proxy cannot be set at the same time.")
-
     # Make prompts
     if args.proxy is not None:
         print("Using the proxy: " + args.proxy)
 
-    if args.tor or args.unique_tor:
-        print("Using Tor to make requests")
-        print("Warning: some websites might refuse connecting over Tor, so note that using this option might increase connection errors.")
 
     # Check if both output methods are entered as input.
     if args.output is not None and args.folderoutput is not None:
@@ -578,8 +562,6 @@ def main():
         results = tracku(username,
                            site_data,
                            query_notify,
-                           tor=args.tor,
-                           unique_tor=args.unique_tor,
                            proxy=args.proxy,
                            timeout=args.timeout)
 

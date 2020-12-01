@@ -27,8 +27,3 @@ python3 tracku user1 user2 user3
 ```
 
 Accounts found will be stored in an individual text file with the corresponding username (e.g ```user123.txt```).
-
-
-## Thanks to 
-
-[Sherlock](https://github.com/sherlock-project/sherlock)

@@ -7,7 +7,7 @@
 # clone the repo
 $ git clone https://github.com/pradyyadav/tracku.git
 
-# change the working directory to sherlock
+# change the working directory to tracku
 $ cd tracku
 
 # install the requirements

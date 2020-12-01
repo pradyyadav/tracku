@@ -5,7 +5,7 @@
 
 ```console
 # clone the repo
-$ git clone https://github.com/Rotten-Scripts/tracku.git
+$ git clone https://github.com/pradyyadav/tracku.git
 
 # change the working directory to tracku
 $ cd tracku
